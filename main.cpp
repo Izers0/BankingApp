@@ -28,23 +28,28 @@ int main() {
     // Switch statement to take the users choice and perform the correct function
     switch (choice) {
 
+        // Show balance
         case 1:
             showBalance(balance);
             break;
 
+        // Deposit
         case 2:
             balance += deposit();
             cout << "Your new Balance is:\n" << balance << "\n";
             break;
 
+        // Withdraw
         case 3:
             balance = withdraw(balance);
             cout << "Your new Balance is:\n" << balance << "\n";
             break;
 
+        // Exit
         case 4:
             cout << "Goodbye";
 
+        // Get user to select one of the given options
         default:
             cout << "Please Select 1-4!";
 
@@ -54,15 +59,19 @@ int main() {
 // Function to show the balance
 void showBalance(double amount) {
 
+    // Display balance
     cout << amount << "\n\n";
 }
 
 // Function to deposit money
 double deposit() {
 
+    // Initialise user choice
     double deposit = 0;
 
     cout << "Enter the amount to be deposited: \n";
+
+    // Get the user input
     cin >> deposit;
     return deposit;
 }
@@ -70,12 +79,16 @@ double deposit() {
 // Function to withdraw money
 double withdraw(double balance) {
 
+    // Initialise user choice
     double withdraw = 0;
 
     cout << "Enter the amount to be withdrawn: \n";
+
+    // Get the user input
     cin >> withdraw;
 
 
+    // Check to see if user balance has sufficient funds
     if (withdraw > balance) {
 
         cout << "Insufficient funds";
