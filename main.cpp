@@ -2,14 +2,14 @@
 using namespace std;
 
 // Declare the functions
-double showBalance(double balance);
-void deposit();
-void withdraw(double balance);
+void showBalance(double balance);
+double deposit();
+double withdraw(double balance);
 
 int main() {
 
     // Initialise the users balance
-    double balance = 0;
+    double balance = 100;
 
     // Initialise the users choice of show balance, deposit money or withdraw money
     int choice = 0;
@@ -29,51 +29,58 @@ int main() {
     switch (choice) {
 
         case 1:
-            cout << "You have a balance of : £";
             showBalance(balance);
             break;
 
         case 2:
-            cout << "You want to deposit Money\n";
-            deposit();
+            balance += deposit();
+            cout << "Your new Balance is:\n" << balance << "\n";
             break;
 
         case 3:
-            cout << "You want to withdraw Money\n";
-            withdraw(balance);
+            balance = withdraw(balance);
+            cout << "Your new Balance is:\n" << balance << "\n";
             break;
 
         case 4:
-            cout << "Goodbye?";
+            cout << "Goodbye";
 
         default:
             cout << "Please Select 1-4!";
 
     }
-
 }
 
 // Function to show the balance
-double showBalance(double amount) {
+void showBalance(double amount) {
 
-    cout << "You have a total of : \n  £";
-    return amount;
+    cout << amount << "\n\n";
 }
 
 // Function to deposit money
-void deposit() {
+double deposit() {
 
     double deposit = 0;
 
     cout << "Enter the amount to be deposited: \n";
     cin >> deposit;
+    return deposit;
 }
 
 // Function to withdraw money
-void withdraw(double balance) {
+double withdraw(double balance) {
 
     double withdraw = 0;
 
     cout << "Enter the amount to be withdrawn: \n";
     cin >> withdraw;
+
+
+    if (withdraw > balance) {
+
+        cout << "Insufficient funds";
+        return balance;
+    }
+
+    return balance - withdraw;
 }
