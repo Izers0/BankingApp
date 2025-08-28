@@ -8,51 +8,62 @@ double withdraw(double balance);
 
 int main() {
 
-    // Initialise the users balance
-    double balance = 100;
+    cout << "Welcome to your bank balance\n";
+    cout << "Do you want to continue to options (yes) or quit?\n\n";
 
-    // Initialise the users choice of show balance, deposit money or withdraw money
-    int choice = 0;
+    string startProgram;
+    cin >> startProgram;
 
-    // Ask the user with a list of options what they want to do
-    cout << "What do You want to do: \n\n";
+    while (startProgram == "yes") {
 
-    cout << "1. Display your Balance\n";
-    cout << "2. Deposit Money\n";
-    cout << "3. Withdraw Money\n";
-    cout << "4. Exit\n\n";
+        // Initialise the users balance
+        double balance = 100;
 
-    // Get the users choice
-    cin >> choice;
+        // Initialise the users choice of show balance, deposit money or withdraw money
+        int choice = 0;
 
-    // Switch statement to take the users choice and perform the correct function
-    switch (choice) {
+        // Ask the user with a list of options what they want to do
+        cout << "What do You want to do: \n\n";
 
-        // Show balance
-        case 1:
-            showBalance(balance);
-            break;
+        cout << "1. Display your Balance\n";
+        cout << "2. Deposit Money\n";
+        cout << "3. Withdraw Money\n";
+        cout << "4. Exit\n\n";
 
-        // Deposit
-        case 2:
-            balance += deposit();
-            cout << "Your new Balance is:\n" << balance << "\n";
-            break;
+        // Get the users choice
+        cin >> choice;
 
-        // Withdraw
-        case 3:
-            balance = withdraw(balance);
-            cout << "Your new Balance is:\n" << balance << "\n";
-            break;
+        // Switch statement to take the users choice and perform the correct function
+        switch (choice) {
 
-        // Exit
-        case 4:
-            cout << "Goodbye";
+            // Show balance
+            case 1:
+                showBalance(balance);
+                break;
 
-        // Get user to select one of the given options
-        default:
-            cout << "Please Select 1-4!";
+                // Deposit
+            case 2:
+                balance += deposit();
+                cout << "Your new Balance is:\n" << balance << "\n";
+                break;
 
+                // Withdraw
+            case 3:
+                balance = withdraw(balance);
+                cout << "Your new Balance is:\n" << balance << "\n";
+                break;
+
+                // Exit
+            case 4:
+                cout << "Goodbye\n";
+                startProgram = "exit";
+                break;
+
+                // Get user to select one of the given options
+            default:
+                cout << "Please Select 1-4!";
+
+        }
     }
 }
 
