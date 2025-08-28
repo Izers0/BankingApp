@@ -2,7 +2,7 @@
 using namespace std;
 
 // Declare the functions
-void showBalance(double balance);
+void showBalanceAmount(double balance);
 double deposit();
 double withdraw(double balance);
 
@@ -38,7 +38,7 @@ int main() {
 
             // Show balance
             case 1:
-                showBalance(balance);
+                showBalanceAmount(balance);
                 break;
 
                 // Deposit
@@ -68,10 +68,10 @@ int main() {
 }
 
 // Function to show the balance
-void showBalance(double amount) {
+void showBalanceAmount(double balance) {
 
     // Display balance
-    cout << amount << "\n\n";
+    cout << balance << "\n\n";
 }
 
 // Function to deposit money
