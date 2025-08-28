@@ -14,10 +14,10 @@ int main() {
     string startProgram;
     cin >> startProgram;
 
-    while (startProgram == "yes") {
+    // Initialise the users balance outside the while loop so it doesn't get reset when choosing different options
+    double balance = 100;
 
-        // Initialise the users balance
-        double balance = 100;
+    while (startProgram == "yes") {
 
         // Initialise the users choice of show balance, deposit money or withdraw money
         int choice = 0;
@@ -62,7 +62,6 @@ int main() {
                 // Get user to select one of the given options
             default:
                 cout << "Please Select 1-4!";
-
         }
     }
 }
