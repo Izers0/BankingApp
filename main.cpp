@@ -15,7 +15,7 @@ int main() {
     cin >> startProgram;
 
     // Initialise the users balance outside the while loop so it doesn't get reset when choosing different options
-    double balance = 100;
+    double balance = 0;
 
     while (startProgram == "yes") {
 
